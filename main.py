@@ -1,0 +1,2 @@
+print("Creating main script")
+
