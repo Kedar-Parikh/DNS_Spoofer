@@ -3,7 +3,8 @@ import scapy.all as scapy
 
 def processpacket(packet):
     spacket = scapy.IP(packet.get_payload())
-    print(spacket.show())
+    if spacket.haslayer(scapy.DNSRR):
+        print(spacket.show())
     packet.accept()
 try:
     queue = nfq.NetfilterQueue()
